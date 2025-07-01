@@ -1,0 +1,34 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# File Structure & Key Components
+
+## Configuration Files
+- **[.mosaia](mdc:.mosaia)** - Tool manifest defining name, description, and parameter schema
+- **[package.json](mdc:package.json)** - NPM package configuration with build scripts and dependencies
+- **[tsconfig.json](mdc:tsconfig.json)** - TypeScript compiler configuration
+- **[.gitignore](mdc:.gitignore)** - Git ignore patterns
+
+## Source Code
+- **[src/index.ts](mdc:src/index.ts)** - Main entry point with `handler` function that processes events
+- **[src/tool-call.ts](mdc:src/tool-call.ts)** - Core tool implementation for listing FiloDataBroker datasets
+
+## Development Tools
+- **[bin/dev.js](mdc:bin/dev.js)** - Local development server script using Express
+- **[bin/validate-manifest.js](mdc:bin/validate-manifest.js)** - Validates .mosaia manifest file structure
+
+## Testing Resources
+- **[postman/](mdc:postman)** - Postman collection for testing the tool endpoints
+- **[.mosaia.example](mdc:.mosaia.example)** - Example manifest file showing required structure
+
+## Generated/Build Outputs
+- **[dist/](mdc:dist)** - Compiled JavaScript output (created by `npm run build`)
+- **[node_modules/](mdc:node_modules)** - NPM dependencies
+- **[package-lock.json](mdc:package-lock.json)** - NPM dependency lock file
+
+## Critical Requirements
+1. **[.mosaia](mdc:.mosaia)** file must be valid (validate with `npm run validate:manifest`)
+2. **`npm run build`** must output to [dist/](mdc:dist) directory  
+3. **[dist/index.js](mdc:dist/index.js)** must be the main entry point after build

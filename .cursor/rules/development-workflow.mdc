@@ -1,0 +1,60 @@
+---
+description: 
+globs: package.json
+alwaysApply: false
+---
+# Development Workflow
+
+## Build Process
+- **Source**: TypeScript files in [src/](mdc:src) directory
+- **Output**: JavaScript files compiled to [dist/](mdc:dist) directory
+- **Command**: `npm run build` (runs `tsc` compiler)
+- **Config**: [tsconfig.json](mdc:tsconfig.json) defines compilation settings
+
+## Local Development
+1. **Build**: `npm run build` - Compiles TypeScript to JavaScript
+2. **Start**: `npm run start:dev` - Builds and starts local Express server on port 3000
+3. **Test**: `npm run test:request` - Tests the FiloDataBroker dataset listing functionality
+
+## Testing the FiloDataBroker Tool
+- **Manual Testing**: `npm run test:request` returns mock dataset listings
+- **Postman**: Import [postman/Mosaia Tools Starter.postman_collection.json](mdc:postman/Mosaia Tools Starter.postman_collection.json) for advanced testing
+- **Local Server**: Access `http://localhost:3000` to get FiloDataBroker datasets JSON response
+- **No Parameters**: Tool works without any query parameters or request body data
+
+## Expected Response Format
+```json
+{
+    "datasets": [
+        {
+            "id": "weather-global-2024",
+            "name": "Global Weather Data 2024", 
+            "description": "Comprehensive weather data from stations worldwide",
+            "categories": ["weather", "climate", "environmental"],
+            "size": "2.1 TB",
+            "updated": "2024-01-15T00:00:00Z",
+            "provider": "MeteoData Inc",
+            "access_level": "public"
+        }
+    ],
+    "total_count": 3,
+    "last_updated": "2024-01-20T12:00:00Z"
+}
+```
+
+## Validation
+- **Manifest**: `npm run validate:manifest` validates the [.mosaia](mdc:.mosaia) file schema
+- **Validation Script**: [bin/validate-manifest.js](mdc:bin/validate-manifest.js) checks required fields and types
+- **No Parameters**: Validation confirms empty parameters object is valid
+
+## Deployment
+- **Trigger**: Push to `main` branch automatically deploys the tool
+- **Requirement**: Must pass manifest validation
+- **Result**: Tool appears in Mosaia Tool Registry within ~1 minute
+- **Function**: AI agents can then use it to discover FiloDataBroker datasets
+
+## Development Status
+- **✅ Handler Function**: Updated to work without parameters
+- **✅ Mock Implementation**: Returns structured dataset response
+- **❌ API Integration**: TODO - Connect to real FiloDataBroker API
+- **✅ Manifest**: Configured for parameter-free operation

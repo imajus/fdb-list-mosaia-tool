@@ -1,0 +1,30 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Mosaia Tool: FiloDataBroker Dataset Lister
+
+## Project Purpose
+This is a **Mosaia Tool** designed to list available datasets from FiloDataBroker. FiloDataBroker is a secure, decentralized marketplace for data trading, and this tool enables AI agents to discover datasets available for querying without requiring any input parameters.
+
+## How Mosaia Tools Work
+- Mosaia tools are serverless functions that extend AI agent capabilities
+- They are deployed automatically when pushed to the `main` branch
+- Tools are defined by a [.mosaia](mdc:.mosaia) manifest file that describes the tool's interface
+- The main entry point is [src/index.ts](mdc:src/index.ts) which exports a `handler` function
+- Actual tool logic is implemented in [src/tool-call.ts](mdc:src/tool-call.ts)
+
+## Key Architecture
+- **Handler Function**: Receives events, calls the tool function, and returns formatted responses
+- **Tool Function**: Returns a structured list of FiloDataBroker datasets with metadata
+- **Manifest**: [.mosaia](mdc:.mosaia) file defines the tool with no required parameters
+- **Build Process**: TypeScript code in `src/` is compiled to JavaScript in `dist/` via [tsconfig.json](mdc:tsconfig.json)
+
+## Current Implementation
+- **No Parameters Required**: Tool returns all available datasets
+- **Mock Data**: Currently returns sample dataset structure (needs FiloDataBroker API integration)
+- **Structured Response**: Returns datasets with id, name, description, categories, size, provider, and access level
+
+## Tool Registry
+Once deployed, this tool appears in the Mosaia Tool Registry and can be added to AI agents to extend their capabilities with FiloDataBroker dataset discovery functionality.
