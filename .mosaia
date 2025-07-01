@@ -5,7 +5,7 @@
         "type": "function",
         "function": {
             "name": "List FiloDataBroker Datasets",
-            "description": "FileDataBroker is a secure, decentralized marketplace for data trading. This tool enables AI agents to discover datasets available for querying.",
+            "description": "FileDataBroker is a secure, decentralized marketplace for data trading. This tool enables AI agents to discover datasets available for querying. Each dataset has private & public columns. Public columns can be used for querying the dataset and private columns will be included in the query results.",
             "strict": true,
             "parameters": {
                 "type": "object",
@@ -14,5 +14,6 @@
                 "additionalProperties": false
             }
         }
-    }
+    },
+    "envVars": []
 }
