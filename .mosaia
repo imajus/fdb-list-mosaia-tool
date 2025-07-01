@@ -1,0 +1,18 @@
+{
+    "name": "List FiloDataBroker Datasets",
+    "description": "List available FiloDataBroker datasets.",
+    "schema": {
+        "type": "function",
+        "function": {
+            "name": "List FiloDataBroker Datasets",
+            "description": "FileDataBroker is a secure, decentralized marketplace for data trading. This tool enables AI agents to discover datasets available for querying.",
+            "strict": true,
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+            }
+        }
+    }
+}
