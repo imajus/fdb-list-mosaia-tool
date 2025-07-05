@@ -9,7 +9,12 @@
             "strict": true,
             "parameters": {
                 "type": "object",
-                "properties": {},
+                "properties": {
+                    "dummy": {
+                        "type": "string",
+                        "description": "Dummy parameter for testing purposes, just pass empty string"
+                    }
+                },
                 "required": [],
                 "additionalProperties": false
             }
