@@ -1,13 +1,13 @@
 import { ethers } from 'ethers';
-import NFTFactoryData from './NFTFactory.json';
+import FDBRegistry from './FDBRegistry.json';
 
 const RPC_URL = `https://api.calibration.node.glif.io/rpc/v1`;
 
 export default async function toolCall(): Promise<object> {
   const provider = new ethers.JsonRpcProvider(RPC_URL);
   const contract = new ethers.Contract(
-    NFTFactoryData.address,
-    NFTFactoryData.abi,
+    FDBRegistry.address,
+    FDBRegistry.abi,
     provider
   );
   const collections = await contract.getActiveCollections();
