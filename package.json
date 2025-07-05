@@ -1,6 +1,6 @@
 {
   "name": "fdb-list-mosaia-tool",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Mosaia tool to list FiloDataBroker datasets",
   "author": "Denis Perov <denis.perov@gmail.com>",
   "main": "dist/index.js",
