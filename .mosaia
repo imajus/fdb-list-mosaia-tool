@@ -15,7 +15,9 @@
                         "description": "Dummy parameter for testing purposes, just pass empty string"
                     }
                 },
-                "required": [],
+                "required": [
+                    "dummy"
+                ],
                 "additionalProperties": false
             }
         }
